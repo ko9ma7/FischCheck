@@ -1,13 +1,3 @@
-_G.selectItems = {
-    "Enchant Relic",
-    "Lunar Thread"
-}
-
-_G.highlightItems = {
-    "Aurora Totem",
-    "Treasure Map"
-}
-
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
