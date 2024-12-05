@@ -1,9 +1,9 @@
-local selectItems = {
+_G.selectItems = {
     "Enchant Relic",
     "Lunar Thread"
 }
 
-local highlightItems = {
+_G.highlightItems = {
     "Aurora Totem",
     "Treasure Map"
 }
@@ -98,7 +98,7 @@ local formattedExpValue = formatNumberWithCommas(playerexpValue)
 local setspawnlocationValue = formatNumberWithCommas(spawnlocationValue)
 
 local function highlightItemName(itemName)
-    if table.find(highlightItems, itemName) then
+    if table.find(_G.highlightItems, itemName) then
         return "- " .. itemName .. ""
     else
         return itemName
@@ -110,7 +110,7 @@ local moreItemsText2 = ""
 
 local itemCount = 0
 for itemName, count in pairs(itemCounts) do
-    if not table.find(selectItems, itemName) then
+    if not table.find(_G.selectItems, itemName) then
         itemCount = itemCount + 1
         local highlightedItemName = highlightItemName(itemName)
         if itemCount <= 40 then
@@ -182,7 +182,7 @@ table.insert(mainFields, {
     inline = false
 })
 
-for _, itemName in ipairs(selectItems) do
+for _, itemName in ipairs(_G.selectItems) do
     local count = itemCounts[itemName] or 0
     local formattedCashCount = formatNumberWithCommas(count)
     table.insert(mainFields, {
